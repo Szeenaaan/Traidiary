@@ -1,0 +1,54 @@
+.trades-content {
+  flex: 1;
+  padding: 48px 56px;
+  background: var(--white);
+}
+
+.trades-title-row {
+  margin-bottom: 36px;
+}
+
+.trades-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--navy);
+}
+
+/* Placeholder — remove once you add your real trades UI */
+.trades-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 50vh;
+  background: rgba(10, 22, 40, 0.03);
+  border: 2px dashed rgba(10, 22, 40, 0.1);
+  border-radius: 16px;
+  text-align: center;
+  padding: 48px;
+}
+
+.trades-placeholder-icon {
+  font-size: 3rem;
+}
+
+.trades-placeholder p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.trades-placeholder small {
+  font-size: 0.78rem;
+  color: #94a3b8;
+}
+
+.trades-placeholder code {
+  background: rgba(10, 22, 40, 0.07);
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-size: 0.76rem;
+  color: var(--navy-light);
+}

@@ -1,0 +1,197 @@
+/* ── CONTAINER ── */
+.trade-table-container {
+  background: linear-gradient(160deg, #0d1e3a 0%, #0a1628 55%, #0f1f3c 100%);
+  border: 1px solid rgba(74, 144, 217, 0.15);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow:
+    0 8px 40px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  position: relative;
+}
+
+.trade-table-container::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 360px; height: 360px;
+  background: radial-gradient(circle, rgba(74, 144, 217, 0.09) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.trade-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ── TABLE ── */
+.trade-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.83rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── HEAD ── */
+.trade-table thead tr {
+  border-bottom: 1px solid rgba(74, 144, 217, 0.2);
+}
+
+.trade-table thead th {
+  padding: 16px 18px;
+  text-align: left;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.28);
+  white-space: nowrap;
+  background: rgba(10, 22, 40, 0.4);
+}
+
+/* ── BODY ROWS ── */
+.trade-table tbody tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  transition: background 0.18s ease;
+}
+
+.trade-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.trade-table tbody tr:hover {
+  background: rgba(74, 144, 217, 0.07);
+}
+
+.trade-table tbody tr.active-row {
+  background: rgba(232, 184, 75, 0.08);
+  border-bottom: 1px solid rgba(232, 184, 75, 0.2);
+}
+
+.trade-table td {
+  padding: 14px 18px;
+  color: rgba(248, 249, 251, 0.75);
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+/* ── SYMBOL ── */
+.trade-table td.symbol {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #f8f9fb;
+  letter-spacing: 0.04em;
+}
+
+/* ── TYPE BADGE ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.badge.buy {
+  background: rgba(0, 200, 120, 0.15);
+  color: #00e676;
+  border: 1px solid rgba(0, 230, 118, 0.25);
+}
+
+.badge.sell {
+  background: rgba(255, 82, 82, 0.13);
+  color: #ff5252;
+  border: 1px solid rgba(255, 82, 82, 0.25);
+}
+
+/* ── PNL ── */
+.pnl-profit {
+  color: #00e676;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.pnl-loss {
+  color: #ff5252;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── DATE ── */
+.trade-table td.date {
+  color: red;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+/* ── ACTIONS ── */
+.trade-table td.actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.btn-edit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(74, 144, 217, 0.14);
+  color: #4a90d9;
+  border: 1px solid rgba(74, 144, 217, 0.28);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 6px 13px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-edit:hover {
+  background: rgba(74, 144, 217, 0.28);
+  color: #fff;
+  border-color: rgba(74, 144, 217, 0.55);
+  transform: translateY(-1px);
+}
+
+.btn-delete {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(229, 57, 53, 0.1);
+  color: #ff5252;
+  border: 1px solid rgba(229, 57, 53, 0.22);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 6px 13px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-delete:hover {
+  background: rgba(229, 57, 53, 0.22);
+  color: #fff;
+  border-color: rgba(229, 57, 53, 0.5);
+  transform: translateY(-1px);
+}
+
+/* ── NO DATA ── */
+.no-data {
+  padding: 56px 24px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.2);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}

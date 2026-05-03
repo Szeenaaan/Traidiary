@@ -1,0 +1,202 @@
+.section-two {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(155deg, #0d1e3a 0%, #0a1628 50%, #0f1f3c 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle background orbs */
+.section-two::before {
+  content: '';
+  position: absolute;
+  top: -120px; left: -120px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(74, 144, 217, 0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.section-two::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; right: -80px;
+  width: 380px; height: 380px;
+  background: radial-gradient(circle, rgba(232, 184, 75, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* DESCRIPTION — 3/4 of section */
+.description-area {
+  flex: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 72px 48px;
+  position: relative;
+  z-index: 1;
+}
+
+.description-card {
+  background: rgba(10, 22, 40, 0.55);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(74, 144, 217, 0.2);
+  border-radius: 20px;
+  padding: 56px 64px;
+  max-width: 760px;
+  width: 100%;
+  text-align: center;
+  box-shadow:
+    0 8px 48px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  animation: fadeUp 0.7s ease 0.1s both;
+}
+
+.description-card h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.1rem;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 18px;
+  line-height: 1.25;
+}
+
+.description-card h2 span {
+  color: var(--accent2);
+}
+
+.description-card p {
+  font-size: 0.93rem;
+  color: rgba(255, 255, 255, 0.58);
+  line-height: 1.88;
+  max-width: 580px;
+  margin: 0 auto 30px;
+}
+
+.desc-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 34px;
+}
+
+.desc-pill {
+  background: rgba(74, 144, 217, 0.14);
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(74, 144, 217, 0.25);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 20px;
+}
+
+.desc-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent2);
+  color: var(--navy);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 12px 28px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.22s ease;
+}
+
+.desc-cta:hover {
+  background: #f0c85a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(232, 184, 75, 0.35);
+}
+
+/* FOOTER — 1/4 of section */
+.footer {
+  flex: 0 0 25%;
+  background: rgba(6, 13, 25, 0.85);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 56px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 100% at 85% 50%, rgba(74, 144, 217, 0.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.06em;
+}
+
+.footer-brand strong {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.footer-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  z-index: 1;
+}
+
+.footer-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  letter-spacing: 0.07em;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: #fff;
+}
+
+.footer-link svg {
+  opacity: 0.65;
+  transition: opacity 0.2s ease;
+}
+
+.footer-link:hover svg {
+  opacity: 1;
+}
+
+.footer-divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.footer-copy {
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.18);
+  letter-spacing: 0.05em;
+  z-index: 1;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
