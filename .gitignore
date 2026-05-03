@@ -11,7 +11,8 @@ obj/
 .vs/
 *.user
 *.suo
-
+Smart Trade Journal/SmartTradeJournal.API/appsettings.Development.json
+Smart Trade Journal/SmartTradeJournal.API/appsettings.json
 # Common
 .DS_Store
 .vscode/
